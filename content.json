@@ -1,0 +1,243 @@
+{
+    "Format": "2.1.0",
+    "Changes": [
+        {
+            "Action": "Load",
+            "Target": "{{ModId}}/objects",
+            "FromFile": "assets/{{TargetWithoutPath}}.png"
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "Entries": {
+                "{{ModId}}_LunarSalmon": {
+                    "Name": "{{ModId}}_LunarSalmon",
+                    "Displayname": "{{i18n:LunarSalmon_name}}",
+                    "Description": "{{i18n:LunarSalmon_description}}",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": 3200,
+                    "Edibility": 100,
+                    "Texture": "{{ModId}}/objects",
+                    "SpriteIndex": 0
+                },
+                "{{ModId}}_MudTrout": {
+                    "Name": "{{ModId}}_MudTrout",
+                    "Displayname": "{{i18n:MudTrout_name}}",
+                    "Description": "{{i18n:MudTrout_description}}",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": 200,
+                    "Edibility": 50,
+                    "Texture": "{{ModId}}/objects",
+                    "SpriteIndex": 1
+                },
+                "{{ModId}}_BlueCatfish": {
+                    "Name": "{{ModId}}_BlueCatfish",
+                    "Displayname": "{{i18n:BlueCatfish_name}}",
+                    "Description": "{{i18n:BlueCatfish_description}}",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": 150,
+                    "Edibility": 70,
+                    "Texture": "{{ModId}}/objects",
+                    "SpriteIndex": 2
+                },
+                "{{ModId}}_ArmoredCatfish": {
+                    "Name": "{{ModId}}_ArmoredCatfish",
+                    "Displayname": "{{i18n:ArmoredCatfish_name}}",
+                    "Description": "{{i18n:ArmoredCatfish_description}}",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": 300,
+                    "Edibility": 40,
+                    "Texture": "{{ModId}}/objects",
+                    "SpriteIndex": 3
+                },
+                "{{ModId}}_WhiteSturgeon": {
+                    "Name": "{{ModId}}_WhiteSturgeon",
+                    "Displayname": "{{i18n:WhiteSturgeon_name}}",
+                    "Description": "{{i18n:WhiteSturgeon_description}}",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": 300,
+                    "Edibility": 22,
+                    "Texture": "{{ModId}}/objects",
+                    "SpriteIndex": 4
+                },
+                "{{ModId}}_MossyCod": {
+                    "Name": "{{ModId}}_MossyCod",
+                    "Displayname": "{{i18n:MossyCod_name}}",
+                    "Description": "{{i18n:MossyCod_description}}",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": 225,
+                    "Edibility": 23,
+                    "Texture": "{{ModId}}/objects",
+                    "SpriteIndex": 5
+                },
+                "{{ModId}}_GhostPike": {
+                    "Name": "{{ModId}}_GhostPike",
+                    "Displayname": "{{i18n:GhostPike_name}}",
+                    "Description": "{{i18n:GhostPike_description}}",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": 200,
+                    "Edibility": 17,
+                    "Texture": "{{ModId}}/objects",
+                    "SpriteIndex": 6
+                },
+                "{{ModId}}_RadioactiveSunfish": {
+                    "Name": "{{ModId}}_RadioactiveSunfish",
+                    "Displayname": "{{i18n:RadioactiveSunfish_name}}",
+                    "Description": "{{i18n:RadioactiveSunfish_description}}",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": 750,
+                    "Edibility": -50,
+                    "Texture": "{{ModId}}/objects",
+                    "SpriteIndex": 7
+                }
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Fish",
+            "Entries": {
+                //Name-How many times it can dart-mixed smooth floater sinker dart-min length-max length-time-weather-unused location info-min distance to cast-spawn modifier-depth modifier-level requirement-tutorial catch
+                "{{ModId}}_LunarSalmon": "Lunar Salmon/100/dart/18/34/2400 2600/spring summer fall/both/689 .4 680 .4/5/.005/.005/10/false",
+                "{{ModId}}_MudTrout": "Mud Trout/50/dart/18/34/0600 2000/spring summer fall winter/both/689 .4 680 .4/3/.2/.1/0/false",
+                "{{ModId}}_BlueCatfish": "Blue Catfish/80/mixed/12/80/600 2400/spring summer/sunny/689 .4 680 .4/4/.05/.1/0/true",
+                "{{ModId}}_ArmoredCatfish": "Armored Catfish/85/mixed/12/70/600 2400/spring summer fall/both/689 .4 680 .4/4/.05/.05/3/false",
+                "{{ModId}}_WhiteSturgeon": "White Sturgeon/85/mixed/12/60/600 1200/spring fall/sunny/689 .35 682 .1/4/.28/.15/1/false",
+                "{{ModId}}_MossyCod": "Mossy Cod/90/mixed/30/50/600 2000/winter/both/690 .4 685 .2/3/.2/.03/0/false",
+                "{{ModId}}_GhostPike": "Ghost Pike/70/dart/15/60/2000 2600/summer winter/rainy/690 .3 681 .1/3/.25/.10/0/true",
+                "{{ModId}}_RadioactiveSunfish": "Radioactive Sunfish/105/dart/36/36/600 2600/spring summer fall winter/both/688 .1/5/.05/.02/0/false"
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "TargetField": [
+                "Forest",
+                "Fish"
+            ],
+            "Entries": {
+                "{{ModId}}_LunarSalmon": {
+                    "ItemId": "{{ModId}}_LunarSalmon",
+                    "FishAreaId": "River",
+                    "Condition": "SEASON spring summer fall",
+                    "Precedence": -200
+                },
+                "{{ModId}}_MudTrout": {
+                    "ItemId": "{{ModId}}_MudTrout",
+                    "FishAreaId": "River",
+                    "Condition": "SEASON spring summer fall"
+                },
+                "{{ModId}}_BlueCatfish": {
+                    "ItemId": "{{ModId}}_BlueCatfish",
+                    "FishAreaId": "River",
+                    "Condition": "SEASON spring summer"
+                },
+                "{{ModId}}_ArmoredCatfish": {
+                    "ItemId": "{{ModId}}_ArmoredCatfish",
+                    "FishAreaId": "River",
+                    "Condition": "SEASON spring summer fall"
+                },
+                "{{ModId}}_WhiteSturgeon": {
+                    "ItemId": "{{ModId}}_WhiteSturgeon",
+                    "FishAreaId": "River",
+                    "Condition": "SEASON spring fall"
+                },
+                "{{ModId}}_GhostPike": {
+                    "ItemId": "{{ModId}}_GhostPike",
+                    "FishAreaId": "River",
+                    "Condition": "SEASON spring summer fall"
+                },
+                "{{ModId}}_MossyCod": {
+                    "ItemId": "{{ModId}}_MossyCod",
+                    "FishAreaId": "River",
+                    "Condition": "SEASON spring fall"
+                },
+                "{{ModId}}_RadioactiveSunfish": {
+                    "ItemId": "{{ModId}}_RadioactiveSunfish",
+                    "FishAreaId": "River",
+                    "Condition": "SEASON spring summer fall winter"
+                }
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "TargetField": [
+                "Town",
+                "Fish"
+            ],
+            "Entries": {
+                "{{ModId}}_MudTrout": {
+                    "ItemId": "{{ModId}}_MudTrout",
+                    "FishAreaId": "River",
+                    "Condition": "SEASON spring summer fall"
+                },
+                "{{ModId}}_BlueCatfish": {
+                    "ItemId": "{{ModId}}_BlueCatfish",
+                    "FishAreaId": "River",
+                    "Condition": "SEASON spring summer"
+                },
+                "{{ModId}}_ArmoredCatfish": {
+                    "ItemId": "{{ModId}}_ArmoredCatfish",
+                    "FishAreaId": "River",
+                    "Condition": "SEASON spring summer fall"
+                },
+                "{{ModId}}_GhostPike": {
+                    "ItemId": "{{ModId}}_GhostPike",
+                    "FishAreaId": "River",
+                    "Condition": "SEASON spring summer"
+                },
+                "{{ModId}}_RadioactiveSunfish": {
+                    "ItemId": "{{ModId}}_RadioactiveSunfish",
+                    "FishAreaId": "River",
+                    "Condition": "SEASON spring summer fall winter"
+                }
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "TargetField": [
+                "Farm_Standard",
+                "Fish"
+            ],
+            "Entries": {
+                "{{ModId}}_MudTrout": {
+                    "ItemId": "{{ModId}}_MudTrout",
+                    "Condition": "SEASON spring summer fall"
+                },
+                "{{ModId}}_BlueCatfish": {
+                    "ItemId": "{{ModId}}_BlueCatfish",
+                    "Condition": "SEASON spring summer"
+                },
+                "{{ModId}}_ArmoredCatfish": {
+                    "ItemId": "{{ModId}}_ArmoredCatfish",
+                    "Condition": "SEASON spring summer fall"
+                },
+                "{{ModId}}_GhostPike": {
+                    "ItemId": "{{ModId}}_GhostPike",
+                    "Condition": "SEASON spring summer fall winter"
+                },
+                "{{ModId}}_MossyCod": {
+                    "ItemId": "{{ModId}}_MossyCod",
+                    "Condition": "SEASON winter"
+                },
+                "{{ModId}}_WhiteSturgeon": {
+                    "ItemId": "{{ModId}}_WhiteSturgeon",
+                    "Condition": "SEASON winter"
+                },
+                "{{ModId}}_RadioactiveSunfish": {
+                    "ItemId": "{{ModId}}_RadioactiveSunfish",
+                    "Condition": "SEASON spring summer fall winter"
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+	"Name": "Fish of Stardew - AztecViper", 
+	"Author": "AztecViper", 
+	"Description": "Adds new fish to Stardew Valley.",
+	"Version": "1.0.0", 
+	"UniqueID": "aztecviper.fishofstardew",
+    "Format": "2.1.0",
+	"UpdateKeys": ["Nexus:???"], 
+    "ContentPackFor": {
+            "UniqueID": "Pathoschild.ContentPatcher"
+                },
+    "Dependencies": [
+        {
+            "UniqueID": "spacechase0.JsonAssets",
+            "IsRequired": false
+            }
+        ]
+}
