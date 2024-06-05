@@ -1,0 +1,25 @@
+{
+    //Rings
+    "PrismarineRing_name": "Prismarine Ring",
+    "PrismarineRing_description": "The wearer receives a small boost in the fishing skill.",
+    //Buffs
+    "FishermansBounty_name": "Fishermans Bounty",
+    "FishermansBounty_description": "A boost in the fishing skill for a lucky angler.",
+    //Fish
+    "LunarSalmon_name": "Lunar Salmon",
+    "LunarSalmon_description": "A rare salmon that can only be caught under the stars.",
+    "MudTrout_name": "Mud Trout",
+    "MudTrout_description": "A common trout that loves mud.",
+    "BlueCatfish_name": "Blue Catfish",
+    "BlueCatfish_description": "A very blue catfish.",
+    "ArmoredCatfish_name": "Armored Catfish",
+    "ArmoredCatfish_description": "A very hard and pokey species of catfish that has evolved to fight off tough predators.",
+    "WhiteSturgeon_name": "White Sturgeon",
+    "WhiteSturgeon_description": "A very white sturgeon species that has lost the pigment in its scales over the centuries.",
+    "MossyCod_name": "Mossy Cod",
+    "MossyCod_description": "A unique species of cod that produces a film on its scales, perfect for growing moss.",
+    "GhostPike_name": "Ghost Pike",
+    "GhostPike_description": "A rare species of pike that is almost invisible in water.",
+    "RadioactiveSunfish_name": "Radioactive Sunfish",
+    "RadioactiveSunfish_description": "A radioactive species of sunfish that has evolved to glow in the dark."
+}

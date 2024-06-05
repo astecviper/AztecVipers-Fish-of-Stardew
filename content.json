@@ -7,9 +7,31 @@
             "FromFile": "assets/{{TargetWithoutPath}}.png"
         },
         {
+            "Action": "Load",
+            "Target": "{{ModId}}/rings",
+            "FromFile": "assets/{{TargetWithoutPath}}.png"
+        },
+        {
+            "Action": "Load",
+            "Target": "{{ModId}}/buffs",
+            "FromFile": "assets/{{TargetWithoutPath}}.png"
+        },
+        {
             "Action": "EditData",
             "Target": "Data/Objects",
             "Entries": {
+                //Rings
+                "{{ModId}}_PrismarineRing": {
+                    "Name": "{{ModId}}_PrismarineRing",
+                    "Displayname": "{{i18n:PrismarineRing_name}}",
+                    "Description": "{{i18n:PrismarineRing_description}}",
+                    "Type": "Ring",
+                    "Category": -96,
+                    "Price": 1250,
+                    "Texture": "{{ModId}}/rings",
+                    "SpriteIndex": 0
+                },
+                //Fish
                 "{{ModId}}_LunarSalmon": {
                     "Name": "{{ModId}}_LunarSalmon",
                     "Displayname": "{{i18n:LunarSalmon_name}}",
@@ -96,11 +118,16 @@
                     "Price": 750,
                     "Edibility": -50,
                     "Texture": "{{ModId}}/objects",
-                    "SpriteIndex": 7
+                    "SpriteIndex": 7,
+                    "ContextTags": [
+                        "light_source",
+                        "torch_item"
+                    ]
                 }
             }
         },
         {
+            //Fish Data
             "Action": "EditData",
             "Target": "Data/Fish",
             "Entries": {
@@ -109,13 +136,14 @@
                 "{{ModId}}_MudTrout": "Mud Trout/50/dart/18/34/0600 2000/spring summer fall winter/both/689 .4 680 .4/3/.2/.1/0/false",
                 "{{ModId}}_BlueCatfish": "Blue Catfish/80/mixed/12/80/600 2400/spring summer/sunny/689 .4 680 .4/4/.05/.1/0/true",
                 "{{ModId}}_ArmoredCatfish": "Armored Catfish/85/mixed/12/70/600 2400/spring summer fall/both/689 .4 680 .4/4/.05/.05/3/false",
-                "{{ModId}}_WhiteSturgeon": "White Sturgeon/85/mixed/12/60/600 1200/spring fall/sunny/689 .35 682 .1/4/.28/.15/1/false",
-                "{{ModId}}_MossyCod": "Mossy Cod/90/mixed/30/50/600 2000/winter/both/690 .4 685 .2/3/.2/.03/0/false",
-                "{{ModId}}_GhostPike": "Ghost Pike/70/dart/15/60/2000 2600/summer winter/rainy/690 .3 681 .1/3/.25/.10/0/true",
-                "{{ModId}}_RadioactiveSunfish": "Radioactive Sunfish/105/dart/36/36/600 2600/spring summer fall winter/both/688 .1/5/.05/.02/0/false"
+                "{{ModId}}_WhiteSturgeon": "White Sturgeon/85/mixed/12/60/600 1200/spring fall/sunny/689 .35 682 .1/4/.28/.15/0/false",
+                "{{ModId}}_MossyCod": "Mossy Cod/90/mixed/30/50/600 2000/winter/both/690 .4 685 .2/3/.2/.03/7/false",
+                "{{ModId}}_GhostPike": "Ghost Pike/70/dart/15/60/2000 2600/summer winter/rainy/690 .3 681 .1/3/.25/.10/4/true",
+                "{{ModId}}_RadioactiveSunfish": "Radioactive Sunfish/105/dart/36/36/600 2600/spring summer fall winter/both/688 .1/5/.05/.02/8/false"
             }
         },
         {
+            //Location: Forest
             "Action": "EditData",
             "Target": "Data/Locations",
             "TargetField": [
@@ -126,47 +154,48 @@
                 "{{ModId}}_LunarSalmon": {
                     "ItemId": "{{ModId}}_LunarSalmon",
                     "FishAreaId": "River",
-                    "Condition": "SEASON spring summer fall",
+                    "Condition": "LOCATION_SEASON Here spring summer fall, WEATHER Here rainy",
                     "Precedence": -200
                 },
                 "{{ModId}}_MudTrout": {
                     "ItemId": "{{ModId}}_MudTrout",
                     "FishAreaId": "River",
-                    "Condition": "SEASON spring summer fall"
+                    "Condition": "LOCATION_SEASON Here spring summer fall"
                 },
                 "{{ModId}}_BlueCatfish": {
                     "ItemId": "{{ModId}}_BlueCatfish",
                     "FishAreaId": "River",
-                    "Condition": "SEASON spring summer"
+                    "Condition": "LOCATION_SEASON Here spring summer"
                 },
                 "{{ModId}}_ArmoredCatfish": {
                     "ItemId": "{{ModId}}_ArmoredCatfish",
                     "FishAreaId": "River",
-                    "Condition": "SEASON spring summer fall"
+                    "Condition": "LOCATION_SEASON Here spring summer fall"
                 },
                 "{{ModId}}_WhiteSturgeon": {
                     "ItemId": "{{ModId}}_WhiteSturgeon",
                     "FishAreaId": "River",
-                    "Condition": "SEASON spring fall"
+                    "Condition": "LOCATION_SEASON Here spring fall"
                 },
                 "{{ModId}}_GhostPike": {
                     "ItemId": "{{ModId}}_GhostPike",
                     "FishAreaId": "River",
-                    "Condition": "SEASON spring summer fall"
+                    "Condition": "LOCATION_SEASON Here spring summer fall, WEATHER Here rainy"
                 },
                 "{{ModId}}_MossyCod": {
                     "ItemId": "{{ModId}}_MossyCod",
                     "FishAreaId": "River",
-                    "Condition": "SEASON spring fall"
+                    "Condition": "LOCATION_SEASON Here spring fall, WEATHER Here sunny"
                 },
                 "{{ModId}}_RadioactiveSunfish": {
                     "ItemId": "{{ModId}}_RadioactiveSunfish",
                     "FishAreaId": "River",
-                    "Condition": "SEASON spring summer fall winter"
+                    "Condition": "LOCATION_SEASON Here spring summer fall winter"
                 }
             }
         },
         {
+            //Location: Town
             "Action": "EditData",
             "Target": "Data/Locations",
             "TargetField": [
@@ -177,31 +206,31 @@
                 "{{ModId}}_MudTrout": {
                     "ItemId": "{{ModId}}_MudTrout",
                     "FishAreaId": "River",
-                    "Condition": "SEASON spring summer fall"
+                    "Condition": "LOCATION_SEASON Here spring summer fall"
                 },
                 "{{ModId}}_BlueCatfish": {
                     "ItemId": "{{ModId}}_BlueCatfish",
                     "FishAreaId": "River",
-                    "Condition": "SEASON spring summer"
+                    "Condition": "LOCATION_SEASON Here spring summer, WEATHER Here sunny"
                 },
                 "{{ModId}}_ArmoredCatfish": {
                     "ItemId": "{{ModId}}_ArmoredCatfish",
                     "FishAreaId": "River",
-                    "Condition": "SEASON spring summer fall"
+                    "Condition": "LOCATION_SEASON Here summer fall, WEATHER Here rainy"
                 },
                 "{{ModId}}_GhostPike": {
                     "ItemId": "{{ModId}}_GhostPike",
                     "FishAreaId": "River",
-                    "Condition": "SEASON spring summer"
+                    "Condition": "LOCATION_SEASON Here spring summer, WEATHER Here rainy"
                 },
                 "{{ModId}}_RadioactiveSunfish": {
                     "ItemId": "{{ModId}}_RadioactiveSunfish",
                     "FishAreaId": "River",
-                    "Condition": "SEASON spring summer fall winter"
+                    "Condition": "LOCATION_SEASON Here spring summer fall winter, WEATHER Here sunny"
                 }
             }
         },
-        {
+        { //Location: Standard Farm
             "Action": "EditData",
             "Target": "Data/Locations",
             "TargetField": [
@@ -211,31 +240,299 @@
             "Entries": {
                 "{{ModId}}_MudTrout": {
                     "ItemId": "{{ModId}}_MudTrout",
-                    "Condition": "SEASON spring summer fall"
+                    "Condition": "LOCATION_SEASON Here spring summer fall"
                 },
                 "{{ModId}}_BlueCatfish": {
                     "ItemId": "{{ModId}}_BlueCatfish",
-                    "Condition": "SEASON spring summer"
+                    "Condition": "LOCATION_SEASON Here spring summer, WEATHER Here sunny"
                 },
                 "{{ModId}}_ArmoredCatfish": {
                     "ItemId": "{{ModId}}_ArmoredCatfish",
-                    "Condition": "SEASON spring summer fall"
+                    "Condition": "LOCATION_SEASON Here spring summer fall, WEATHER Here rainy"
                 },
                 "{{ModId}}_GhostPike": {
                     "ItemId": "{{ModId}}_GhostPike",
-                    "Condition": "SEASON spring summer fall winter"
+                    "Condition": "LOCATION_SEASON Here spring summer fall winter, WEATHER Here rainy"
                 },
                 "{{ModId}}_MossyCod": {
                     "ItemId": "{{ModId}}_MossyCod",
-                    "Condition": "SEASON winter"
+                    "Condition": "LOCATION_SEASON Here winter, WEATHER Here sunny"
                 },
                 "{{ModId}}_WhiteSturgeon": {
                     "ItemId": "{{ModId}}_WhiteSturgeon",
-                    "Condition": "SEASON winter"
+                    "Condition": "LOCATION_SEASON Here winter, WEATHER Here sunny"
                 },
                 "{{ModId}}_RadioactiveSunfish": {
                     "ItemId": "{{ModId}}_RadioactiveSunfish",
-                    "Condition": "SEASON spring summer fall winter"
+                    "Condition": "LOCATION_SEASON Here spring summer fall winter"
+                }
+            }
+        },
+        { //Location: Farm Cave
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "TargetField": [
+                "FarmCave",
+                "Fish"
+            ],
+            "Entries": {}
+        },
+        { //Location: Beach
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "TargetField": [
+                "Beach",
+                "Fish"
+            ],
+            "Entries": {}
+        },
+        { //Artifact: Beach
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "TargetField": [
+                "Beach",
+                "ArtifactSpots"
+            ],
+            "Entries": {
+                "{{ModId}}_PrismarineRing": {
+                    "Chance": 0.08,
+                    "MinStack": 1,
+                    "MaxStack": 1,
+                    "ItemId": "{{ModId}}_PrismarineRing",
+                    "Condition": "WEATHER Here rainy"
+                }
+            }
+        },
+        { //Location: Mountain
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "TargetField": [
+                "Mountain",
+                "Fish"
+            ],
+            "Entries": {
+                "{{ModId}}_LunarSalmon": {
+                    "ItemId": "{{ModId}}_LunarSalmon",
+                    "FishAreaId": "River",
+                    "Condition": "LOCATION_SEASON Here winter, WEATHER Here sunny",
+                    "Precedence": -200
+                },
+                "{{ModId}}_MudTrout": {
+                    "ItemId": "{{ModId}}_MudTrout",
+                    "FishAreaId": "River",
+                    "Condition": "LOCATION_SEASON Here fall winter, WEATHER Here sunny"
+                },
+                "{{ModId}}_WhiteSturgeon": {
+                    "ItemId": "{{ModId}}_WhiteSturgeon",
+                    "FishAreaId": "River",
+                    "Condition": "LOCATION_SEASON Here fall winter, WEATHER Here rainy"
+                }
+            }
+        },
+        { //Location: Sewer
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "TargetField": [
+                "Sewer",
+                "Fish"
+            ],
+            "Entries": {}
+        },
+        { //Location: Desert
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "TargetField": [
+                "Desert",
+                "Fish"
+            ],
+            "Entries": {}
+        },
+        { //Location: Woods
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "TargetField": [
+                "Woods",
+                "Fish"
+            ],
+            "Entries": {
+                "{{ModId}}_LunarSalmon": {
+                    "ItemId": "{{ModId}}_LunarSalmon",
+                    "FishAreaId": "River",
+                    "Condition": "LOCATION_SEASON Here winter",
+                    "Precedence": -200
+                },
+                "{{ModId}}_GhostPike": {
+                    "ItemId": "{{ModId}}_GhostPike",
+                    "FishAreaId": "River",
+                    "Condition": "LOCATION_SEASON Here fall"
+                }
+            }
+        },
+        { //Location: Backwoods
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "TargetField": [
+                "Backwoods",
+                "Fish"
+            ],
+            "Entries": {
+                "{{ModId}}_MudTrout": {
+                    "ItemId": "{{ModId}}_MudTrout",
+                    "FishAreaId": "River",
+                    "Condition": "LOCATION_SEASON Here summer fall"
+                },
+                "{{ModId}}_GhostPike": {
+                    "ItemId": "{{ModId}}_GhostPike",
+                    "FishAreaId": "River",
+                    "Condition": "LOCATION_SEASON Here fall winter"
+                },
+                "{{ModId}}_WhiteSturgeon": {
+                    "ItemId": "{{ModId}}_WhiteSturgeon",
+                    "FishAreaId": "River",
+                    "Condition": "LOCATION_SEASON Here winter"
+                }
+            }
+        },
+        { //Location: Submarine
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "TargetField": [
+                "Submarine",
+                "Fish"
+            ],
+            "Entries": {}
+        },
+        { //Location: IslandSouth
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "TargetField": [
+                "IslandSouth",
+                "Fish"
+            ],
+            "Entries": {}
+        },
+        { //Location: IslandSouthEast
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "TargetField": [
+                "IslandSouthEast",
+                "Fish"
+            ],
+            "Entries": {}
+        },
+        { //Location: IslandSouthEastCave
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "TargetField": [
+                "IslandSouthEastCave",
+                "Fish"
+            ],
+            "Entries": {}
+        },
+        { //Location: IslandEast
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "TargetField": [
+                "IslandEast",
+                "Fish"
+            ],
+            "Entries": {}
+        },
+        { //Location: IslandWest
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "TargetField": [
+                "IslandWest",
+                "Fish"
+            ],
+            "Entries": {}
+        },
+        { //Location: IslandNorth
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "TargetField": [
+                "IslandNorth",
+                "Fish"
+            ],
+            "Entries": {}
+        },
+        { //Location: Caldera
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "TargetField": [
+                "Caldera",
+                "Fish"
+            ],
+            "Entries": {}
+        },
+        { //Location: UndergroundMine
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "TargetField": [
+                "UndergroundMine",
+                "Fish"
+            ],
+            "Entries": {}
+        },
+        { //Location: DesertFestival
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "TargetField": [
+                "DesertFestival",
+                "Fish"
+            ],
+            "Entries": {}
+        },
+        { //Treaure Loot
+            "Action": "EditData",
+            "Target": "Mods/mistyspring.ItemExtensions/Treasure",
+            "Entries": {
+                "MyCustomLoot": {
+                    "ItemId": "{{ModId}}_PrismarineRing",
+                    "Chance": 1.04,
+                    "MinStack": 1,
+                    "MaxStack": 1
+                }
+            }
+        },
+        { //Buffs
+            "Action": "EditData",
+            "Target": "Data/Buffs",
+            "Entries": {
+                "{{ModId}}_FishermansBounty": {
+                    "DisplayName": "{{i18n:FishermansBounty_name}}",
+                    "Description": "{{i18n:FishermansBounty_description}}",
+                    "Duration": -2,
+                    "IconTexture": "{{ModId}}/buffs",
+                    "IconSpriteIndex": 0,
+                    "Effects": {
+                        "FishingLevel": 1.0,
+                        "LuckLevel": 1.0
+                    }
+                }
+            }
+        },
+        { //Equip Buffs
+            "Action": "EditData",
+            "Target": "Data/TriggerActions",
+            "Entries": {
+                "{{ModId}}_PrismarineRingEquip": {
+                    "Id": "{{ModId}}_PrismarineRingEquip",
+                    "ItemId": "{{ModId}}_PrismarineRing",
+                    "Trigger": "mistyspring.ItemExtensions_OnEquip",
+                    "MarkActionApplied": false,
+                    "Actions": [
+                        "AddBuff {{ModId}}_FishermansBounty"
+                    ]
+                },
+                "{{ModId}}_PrismarineRingUnequip": {
+                    "Id": "{{ModId}}_PrismarineRingUnequip",
+                    "ItemId": "{{ModId}}_PrismarineRing",
+                    "Trigger": "mistyspring.ItemExtensions_OnUnequip",
+                    "MarkActionApplied": false,
+                    "Actions": [
+                        "RemoveBuff {{ModId}}_FishermansBounty"
+                    ]
                 }
             }
         }
