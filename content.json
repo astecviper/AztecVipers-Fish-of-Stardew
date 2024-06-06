@@ -31,10 +31,9 @@
                     "Texture": "{{ModId}}/rings",
                     "SpriteIndex": 0
                 },
-                {
                 "{{ModId}}_FishermansBlessing": {
                     "Name": "{{ModId}}_FishermansBlessing",
-                    "DisplayName": "{{i18n:FishermansBlessing_name",
+                    "DisplayName": "{{i18n:FishermansBlessing_name}}",
                     "Description": "{{i18n:FishermansBlessing_description}}",
                     "Type": "Ring",
                     "Category": -96,
@@ -509,7 +508,7 @@
                         "LuckLevel": 1.0
                     }
                 },
-                "{{ModId}}_OceansBlessing"{
+                "{{ModId}}_OceansBlessing": {
                     "DisplayName": "{{i18n:OceansBlessing_name}}",
                     "Description": "{{i18n:OceansBlessing_description}}",
                     "Duration": -2,
@@ -529,7 +528,7 @@
                 "{{ModId}}_PrismarineRingEquip": {
                     "Id": "{{ModId}}_PrismarineRingEquip",
                     "ItemId": "{{ModId}}_PrismarineRing",
-                    "Trigger": "mistyspring.ItemExtensions_OnEquip",
+                    "Trigger": "aztecviper.fishOfStardewMod_OnRingEquip",
                     "MarkActionApplied": false,
                     "Actions": [
                         "AddBuff {{ModId}}_FishermansBounty"
@@ -538,7 +537,7 @@
                 "{{ModId}}_PrismarineRingUnequip": {
                     "Id": "{{ModId}}_PrismarineRingUnequip",
                     "ItemId": "{{ModId}}_PrismarineRing",
-                    "Trigger": "mistyspring.ItemExtensions_OnUnequip",
+                    "Trigger": "aztecviper.fishOfStardewMod_OnRingUnequip",
                     "MarkActionApplied": false,
                     "Actions": [
                         "RemoveBuff {{ModId}}_FishermansBounty"
@@ -547,7 +546,7 @@
                 "{{ModId}}_OceansBlessingEquip": {
                     "Id": "{{ModId}}_OceansBlessingEquip",
                     "ItemId": "{{ModId}}_OceansBlessing",
-                    "Trigger": "mistyspring.ItemExtensions_OnEquip",
+                    "Trigger": "aztecviper.fishOfStardewMod_OnRingEquip",
                     "MarkActionApplied": false,
                     "Actions": [
                         "AddBuff {{ModId}}_FishermansBounty"
@@ -556,7 +555,7 @@
                 "{{ModId}}_OceansBlessingUnequip": {
                     "Id": "{{ModId}}_OceansBlessingUnequip",
                     "ItemId": "{{ModId}}_OceansBlessing",
-                    "Trigger": "mistyspring.ItemExtensions_OnUnequip",
+                    "Trigger": "aztecviper.fishOfStardewMod_OnRingUnequip",
                     "MarkActionApplied": false,
                     "Actions": [
                         "RemoveBuff {{ModId}}_FishermansBounty"
