@@ -31,6 +31,17 @@
                     "Texture": "{{ModId}}/rings",
                     "SpriteIndex": 0
                 },
+                {
+                "{{ModId}}_FishermansBlessing": {
+                    "Name": "{{ModId}}_FishermansBlessing",
+                    "DisplayName": "{{i18n:FishermansBlessing_name",
+                    "Description": "{{i18n:FishermansBlessing_description}}",
+                    "Type": "Ring",
+                    "Category": -96,
+                    "Price": 2500,
+                    "Texture": "{{ModId}}/rings",
+                    "SpriteIndex": 1
+                },
                 //Fish
                 "{{ModId}}_LunarSalmon": {
                     "Name": "{{ModId}}_LunarSalmon",
@@ -483,18 +494,6 @@
             ],
             "Entries": {}
         },
-        { //Treaure Loot
-            "Action": "EditData",
-            "Target": "Mods/mistyspring.ItemExtensions/Treasure",
-            "Entries": {
-                "MyCustomLoot": {
-                    "ItemId": "{{ModId}}_PrismarineRing",
-                    "Chance": 1.04,
-                    "MinStack": 1,
-                    "MaxStack": 1
-                }
-            }
-        },
         { //Buffs
             "Action": "EditData",
             "Target": "Data/Buffs",
@@ -509,10 +508,21 @@
                         "FishingLevel": 1.0,
                         "LuckLevel": 1.0
                     }
+                },
+                "{{ModId}}_OceansBlessing"{
+                    "DisplayName": "{{i18n:OceansBlessing_name}}",
+                    "Description": "{{i18n:OceansBlessing_description}}",
+                    "Duration": -2,
+                    "IconTexture": "{{ModId}}/buffs",
+                    "IconSpriteIndex": 1,
+                    "Effects": {
+                        "FishingLevel": 2.0,
+                        "LuckLevel": 2.0
+                    }
                 }
             }
         },
-        { //Equip Buffs
+        { //Equip/Uneqip Buffs - Item Extensions
             "Action": "EditData",
             "Target": "Data/TriggerActions",
             "Entries": {
@@ -528,6 +538,24 @@
                 "{{ModId}}_PrismarineRingUnequip": {
                     "Id": "{{ModId}}_PrismarineRingUnequip",
                     "ItemId": "{{ModId}}_PrismarineRing",
+                    "Trigger": "mistyspring.ItemExtensions_OnUnequip",
+                    "MarkActionApplied": false,
+                    "Actions": [
+                        "RemoveBuff {{ModId}}_FishermansBounty"
+                    ]
+                },
+                "{{ModId}}_OceansBlessingEquip": {
+                    "Id": "{{ModId}}_OceansBlessingEquip",
+                    "ItemId": "{{ModId}}_OceansBlessing",
+                    "Trigger": "mistyspring.ItemExtensions_OnEquip",
+                    "MarkActionApplied": false,
+                    "Actions": [
+                        "AddBuff {{ModId}}_FishermansBounty"
+                    ]
+                },
+                "{{ModId}}_OceansBlessingUnequip": {
+                    "Id": "{{ModId}}_OceansBlessingUnequip",
+                    "ItemId": "{{ModId}}_OceansBlessing",
                     "Trigger": "mistyspring.ItemExtensions_OnUnequip",
                     "MarkActionApplied": false,
                     "Actions": [
